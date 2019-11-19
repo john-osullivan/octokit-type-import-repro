@@ -29,10 +29,4 @@ leads to the issue above, but if it's updated to
 export * from './Name'
 ```
 
-then there are no errors.  The files in `@octokit/types/src` all just import one type apiece, but if exporting all were undesirable, this workaround behaves correctly with Babel:
-
-```typescript
-import { Name as NameType } from './Name';
-
-export import Name = NameType;
-```
+then there are no errors.  The files in `@octokit/types/src` all just import one type apiece, so it works out the same.
