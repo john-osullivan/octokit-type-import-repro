@@ -11,7 +11,13 @@ to verify an issue with the `@octokit/types` library when used with the `--isola
 
 ![](./error.png)
 
-This export syntax in `@octokit/types/src/index.ts`:
+This reproduction triggers the error with the following line in `App.tsx`:
+
+```typescript
+import { Types } from '@octokit/auth-oauth-app';
+```
+
+If you trace it back, the import tree leads you to `@octokit/types`, where this export syntax in `src/index.ts`:
 
 ```typescript
 export { Name } from './Name';
